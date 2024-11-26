@@ -20,3 +20,42 @@ Before using this script, ensure you have the following prerequisites:
 3. Make the script executable by running:
    ```bash
    chmod +x mail_log_monitor.sh
+
+## Configuration
+1. Create a Telegram Bot and Get the Token:
+    - Open Telegram and search for the "BotFather" user.
+    - Start a chat with BotFather and use the command /newbot.
+    - Follow the instructions provided to create your bot and get the bot token.
+2. Get the Chat ID:
+    - Start a chat with your bot in Telegram.
+    - Send any message to your bot.
+    - Use the following API call to get your chat ID:
+    ```bash
+    https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+    ```
+    - Look for "chat":{"id":...} in the JSON response. Use this ID in the script.
+3. Edit Script Variables:
+    -Open the script in a text editor.
+    -Replace the BOT_TOKEN and CHAT_ID variables with your actual bot token and chat ID:
+    ```bash
+    BOT_TOKEN="YOUR_BOT_TOKEN"
+    CHAT_ID="YOUR_CHAT_ID"
+    ```
+4. Specify the Log File:
+    - Ensure that the log file path is correct. The default path is set to /var/log/mail.log, but you can change it to any log file you want to monitor.
+
+## Running the Script
+1. Save the script
+    - Copy the provided script into test file
+2. Make the script excutable
+    ```bash
+    chmod +x log_monitor.sh
+    ```
+3. Run the script
+    - Execute the script in terminal:
+    ```bash
+    ./log_monitor.sh
+    ```
+
+#Extensions
+1. Usage of screens or other utility to allow the script to run continously
